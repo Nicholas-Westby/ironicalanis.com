@@ -1,7 +1,7 @@
 import './style.css'
 import { Scene, Camera, WebGLRenderer, PerspectiveCamera, Mesh,
   DirectionalLight, AmbientLight, SphereGeometry,
-  VideoTexture, MeshBasicMaterial, MirroredRepeatWrapping } from 'three';
+  VideoTexture, MeshBasicMaterial } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 let scene: Scene,
@@ -79,8 +79,8 @@ async function addSphere() {
   scene.add(mesh);
 }
 
-function getVideo() {
-  return document.querySelector('video');
+function getVideo(): HTMLVideoElement {
+  return document.querySelector('video') || document.createElement('video');
 }
 
 async function loadVideoMaterial() {
