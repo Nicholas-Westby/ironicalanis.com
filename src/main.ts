@@ -1,5 +1,6 @@
 import './style.css'
-import { Scene, Camera, WebGLRenderer, PerspectiveCamera, Mesh, DirectionalLight, AmbientLight, BoxGeometry, MeshStandardMaterial } from 'three';
+import { Scene, Camera, WebGLRenderer, PerspectiveCamera, Mesh,
+  DirectionalLight, AmbientLight, SphereGeometry, MeshStandardMaterial } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 let scene: Scene,
@@ -70,13 +71,13 @@ function onResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-async function addCube() {
-  const cubeGeo = new BoxGeometry(1, 1, 1);
-  const material = new MeshStandardMaterial({color: 0x008888});
-  const cube = new Mesh(cubeGeo, material);
-  scene.add(cube);
+async function addSphere() {
+  const geo = new SphereGeometry(1, 50, 50);
+  const material = new MeshStandardMaterial({color: 0xff8888});
+  const mesh = new Mesh(geo, material);
+  scene.add(mesh);
 }
 
 await init();
-await addCube();
+await addSphere();
 await animate();
