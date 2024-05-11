@@ -1,8 +1,13 @@
 import './style.css'
-import { Scene, Camera, WebGLRenderer, PerspectiveCamera, Mesh,
+import {
+  Scene, Camera, WebGLRenderer, PerspectiveCamera, Mesh,
   DirectionalLight, AmbientLight, SphereGeometry,
-  VideoTexture, MeshBasicMaterial } from 'three';
+  VideoTexture, MeshBasicMaterial,
+  Vector2,
+} from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+const enableOrbit = false;
 
 let scene: Scene,
   camera: Camera,
@@ -15,7 +20,7 @@ async function init() {
   addCamera();
   addDirectionalLight();
   addAmbientLight();
-  addOrbitControls();
+  enableOrbit && addOrbitControls();
 }
 
 function addScene() {
@@ -38,8 +43,10 @@ function getAspect() {
 }
 
 function addCamera() {
-  camera = new PerspectiveCamera(45, getAspect(), 1, 1000);
-  camera.position.z = 3;
+  camera = new PerspectiveCamera(45, getAspect(), 0.1, 1000);
+  camera.position.z = 1.5;
+  camera.position.y = 0;
+  camera.lookAt(0, 0.8, 0);
 }
 
 function addOrbitControls() {
@@ -62,7 +69,7 @@ function addAmbientLight() {
 
 async function animate() {
   requestAnimationFrame(animate);
-  orbit.update();
+  orbit?.update();
   renderer.render(scene, camera);
 }
 
@@ -86,6 +93,8 @@ function getVideo(): HTMLVideoElement {
 async function loadVideoMaterial() {
   const video = getVideo();
   const videoTexture = new VideoTexture(video);
+  videoTexture.repeat.set(4, 3);
+  videoTexture.offset = new Vector2(-.55, -1.4);
   return new MeshBasicMaterial({ map: videoTexture });
 }
 
