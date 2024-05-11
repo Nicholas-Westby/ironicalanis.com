@@ -1,9 +1,11 @@
 import './style.css'
 import { Scene, Camera, WebGLRenderer, PerspectiveCamera, Mesh, DirectionalLight, AmbientLight, BoxGeometry, MeshStandardMaterial } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 let scene: Scene,
   camera: Camera,
-  renderer: WebGLRenderer;
+  renderer: WebGLRenderer,
+  orbit: OrbitControls;
 
 async function init() {
   addScene();
@@ -11,6 +13,7 @@ async function init() {
   addCamera();
   addDirectionalLight();
   addAmbientLight();
+  addOrbitControls();
 }
 
 function addScene() {
@@ -37,6 +40,10 @@ function addCamera() {
   camera.position.z = 4;
 }
 
+function addOrbitControls() {
+  orbit = new OrbitControls(camera, renderer.domElement);
+}
+
 function addDirectionalLight() {
   const directionalLight = new DirectionalLight(0xffffff);
   directionalLight.position.set(20, 10, 30).normalize();
@@ -53,6 +60,7 @@ function addAmbientLight() {
 
 async function animate() {
   requestAnimationFrame(animate);
+  orbit.update();
   renderer.render(scene, camera);
 }
 
