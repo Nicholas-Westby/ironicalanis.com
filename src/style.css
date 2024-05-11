@@ -1,5 +1,18 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
-  background: #8ff;
+  background: #0ff;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  &.playing {
+    button {
+      display: none;
+    }
+  }
 }
 
 video {
@@ -8,4 +21,19 @@ video {
   top: 0;
   width: 10px;
   height: 10px;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 20vmin;
+  font-weight: bold;
 }
