@@ -31,8 +31,8 @@ function getGlobals() {
 
 async function init() {
   scene = addScene();
-  renderer = addRenderer(getGlobals());
   camera = addCamera();
+  renderer = addRenderer(getGlobals());
   addDirectionalLight(getGlobals());
   addAmbientLight(getGlobals());
   if (enableOrbit) {
