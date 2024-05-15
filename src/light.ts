@@ -10,6 +10,6 @@ export function addDirectionalLight({scene}: {scene: Scene}) {
 
 export function addAmbientLight({scene}: {scene: Scene}) {
   const light = new AmbientLight(0xffffff);
-  light.intensity = 0.1;
+  light.intensity = 0.2;
   scene.add(light);
 }
