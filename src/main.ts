@@ -10,8 +10,7 @@ import {addAmbientLight, addDirectionalLight} from "./light.ts";
 import {addRenderer, addScene, animate} from "./render.ts";
 import {initButton} from "./button.ts";
 
-const enableOrbit = false,
-  autoplay = false;
+const enableOrbit = false;
 
 let scene: Scene,
   camera: Camera,
@@ -21,7 +20,6 @@ let scene: Scene,
 function getGlobals() {
   return {
     enableOrbit,
-    autoplay,
     scene,
     camera,
     renderer,

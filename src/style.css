@@ -8,9 +8,10 @@ body {
   margin: 0;
   padding: 0;
 
-  &.playing {
+  &.unmuted {
     button {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
     }
   }
 }
@@ -30,10 +31,28 @@ canvas {
 
 button {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  font-size: 20vmin;
+  left: 1vmin;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10vmin;
   font-weight: bold;
+  padding: 2vmin;
+  border-radius: 0;
+  border-width: 0;
+  background: #fffa;
+  color: #000;
+  opacity: 1;
+  cursor: pointer;
+  box-shadow: 1vmin 1vmin 0.5vmin 0 #0008;
+  transition:
+          0.25s box-shadow,
+          0.25s background,
+          0.25s color,
+          1s opacity;
+
+  &:hover, &:focus {
+    box-shadow: 2vmin 2vmin 2vmin 0 #0008;
+    background: #000a;
+    color: #fff;
+  }
 }
