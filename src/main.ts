@@ -9,6 +9,7 @@ import {addCamera} from "./camera.ts";
 import {addAmbientLight, addDirectionalLight} from "./light.ts";
 import {addRenderer, addScene, animate} from "./render.ts";
 import {initButton} from "./button.ts";
+import {addMoney} from "./money.ts";
 
 const enableOrbit = false;
 
@@ -40,5 +41,6 @@ async function init() {
 
 await init();
 await addSphere(getGlobals());
+await addMoney(getGlobals());
 await animate(getGlobals());
 await initButton();
