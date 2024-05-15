@@ -28,17 +28,13 @@ async function copyDirectory(srcDir, destDir) {
 
 async function main() {
     const baseDir = pathJoin(__dirname, '..');
-    const destDir = pathJoin(baseDir, 'public');
+    const destDir = pathJoin(baseDir, 'dist');
 
     // List of paths to copy
     const pathsToCopy = [
-        'index.html',
-        'styles',
-        'scripts',
-        'assets'
+        'assets/images',
+        'assets/models',
     ];
-
-    await deletePublicFolder();
 
     for (const p of pathsToCopy) {
         const src = pathJoin(baseDir, p);
@@ -53,11 +49,6 @@ async function main() {
             await copySingleFile(src, dest);
         }
     }
-}
-
-async function deletePublicFolder() {
-    const publicDirPath = pathJoin(__dirname, '..', 'public');
-    await rm(publicDirPath, { recursive: true, force: true });
 }
 
 await main();
