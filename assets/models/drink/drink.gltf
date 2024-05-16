@@ -59,8 +59,8 @@
 				1
 			],
 			"translation":[
-				0.7567057609558105,
-				0.6409194469451904,
+				0.1588653326034546,
+				0.9136860370635986,
 				0.38309815526008606
 			]
 		},
@@ -101,13 +101,27 @@
 		},
 		{
 			"doubleSided":true,
+			"name":"Material.004",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.800000011920929,
+					0.800000011920929,
+					0.800000011920929,
+					0.3298701047897339
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
+		},
+		{
+			"doubleSided":true,
 			"name":"Material.001",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0.8003778457641602,
 					0.7093511819839478,
 					0.20894989371299744,
-					1
+					0.8805195093154907
 				],
 				"metallicFactor":0,
 				"roughnessFactor":0.5
@@ -152,7 +166,8 @@
 						"NORMAL":5,
 						"TEXCOORD_0":6
 					},
-					"indices":7
+					"indices":7,
+					"material":1
 				}
 			]
 		},
@@ -165,7 +180,7 @@
 						"NORMAL":9
 					},
 					"indices":10,
-					"material":1
+					"material":2
 				}
 			]
 		},
@@ -178,7 +193,7 @@
 						"NORMAL":12
 					},
 					"indices":13,
-					"material":2
+					"material":3
 				}
 			]
 		}
@@ -190,7 +205,7 @@
 			"count":320,
 			"max":[
 				10,
-				1,
+				0.8245730996131897,
 				10
 			],
 			"min":[
@@ -221,7 +236,7 @@
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":192,
+			"count":160,
 			"max":[
 				1,
 				1,
@@ -237,19 +252,19 @@
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":192,
+			"count":160,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":192,
+			"count":160,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":7,
 			"componentType":5123,
-			"count":372,
+			"count":282,
 			"type":"SCALAR"
 		},
 		{
@@ -258,7 +273,7 @@
 			"count":3840,
 			"max":[
 				0.9300000071525574,
-				0.9300000071525574,
+				0.40067213773727417,
 				0.9300000071525574
 			],
 			"min":[
@@ -336,68 +351,68 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":2304,
+			"byteLength":1920,
 			"byteOffset":11356,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2304,
-			"byteOffset":13660,
+			"byteLength":1920,
+			"byteOffset":13276,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1536,
-			"byteOffset":15964,
+			"byteLength":1280,
+			"byteOffset":15196,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":744,
-			"byteOffset":17500,
+			"byteLength":564,
+			"byteOffset":16476,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":46080,
-			"byteOffset":18244,
+			"byteOffset":17040,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":46080,
-			"byteOffset":64324,
+			"byteOffset":63120,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":7680,
-			"byteOffset":110404,
+			"byteOffset":109200,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":2880,
-			"byteOffset":118084,
+			"byteOffset":116880,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":2880,
-			"byteOffset":120964,
+			"byteOffset":119760,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":480,
-			"byteOffset":123844,
+			"byteOffset":122640,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":124324,
+			"byteLength":123120,
 			"uri":"drink.bin"
 		}
 	]

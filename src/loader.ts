@@ -1,12 +1,14 @@
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import {Group, Object3DEventMap, Scene} from "three";
 import {smoothGeometry} from "./geometry.ts";
+import {transparentMaterial} from "./material.ts";
 
 export async function addObject({scene, name, scale}: {scene: Scene, name: string, scale?: number}): Promise<Group<Object3DEventMap>> {
   const loader = new GLTFLoader().setPath(`/assets/models/${name}/`);
   return new Promise((resolve) => {
     loader.load(`${name}.gltf`, async (gltf) => {
       const model = await smoothGeometry({model: gltf.scene});
+      await transparentMaterial({model});
 
       const factor = scale || 0.1;
       model.scale.set(factor, factor, factor);
