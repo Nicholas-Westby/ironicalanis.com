@@ -10,7 +10,8 @@
     "name": "Chardonnay Fly",
     "ironic": false,
     "times": [23],
-    "phrase": "It's a black fly in your chardonnay."
+    "phrase": "It's a black fly in your chardonnay.",
+    "model": "drink"
   },
   {
     "name": "Late Pardon",
