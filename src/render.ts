@@ -2,6 +2,7 @@ import {Camera, Scene, WebGLRenderer} from "three";
 import {getAspect} from "./window.ts";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
 import {animateIronies} from "./irony-animation.ts";
+import {checkIntersections} from "./mouse.ts";
 
 export function addRenderer({camera}: {camera: Camera}) {
   const renderer = new WebGLRenderer({
@@ -23,6 +24,7 @@ export async function animate({orbit, renderer, scene, camera}:
     animate({orbit, renderer, scene, camera});
   });
   await animateIronies();
+  await checkIntersections({camera, scene});
   orbit?.update();
   renderer.render(scene, camera);
 }

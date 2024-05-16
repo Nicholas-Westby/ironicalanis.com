@@ -15,7 +15,7 @@ export async function animateIronies() {
       const factor = 2.2;
       irony.model.rotation.x = progress * factor;
     } else {
-      irony.model.rotation.x = -1;
+      irony.model.rotation.x = -2;
     }
   }
 }

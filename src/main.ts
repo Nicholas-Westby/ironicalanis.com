@@ -10,7 +10,7 @@ import {addCamera} from "./camera";
 import {addAmbientLight, addDirectionalLight} from "./light";
 import {addRenderer, addScene, animate} from "./render";
 import {initButton} from "./button";
-import {addIronies} from "./models.ts";
+import {addIronies} from "./models";
 
 const enableOrbit = false;
 
@@ -45,4 +45,3 @@ await addSphere(getGlobals());
 await addIronies(getGlobals());
 await animate(getGlobals());
 await initButton();
-
