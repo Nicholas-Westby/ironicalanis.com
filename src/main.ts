@@ -1,16 +1,16 @@
-import './style.css';
-import './stopwatch';
+import './styles/style.css';
+//import './stopwatch';
 import {
   Scene, Camera, WebGLRenderer,
 } from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-import {addSphere} from './sphere.ts';
-import {addOrbitControls} from "./orbit.ts";
-import {addCamera} from "./camera.ts";
-import {addAmbientLight, addDirectionalLight} from "./light.ts";
-import {addRenderer, addScene, animate} from "./render.ts";
-import {initButton} from "./button.ts";
-import {addMoney} from "./money.ts";
+import {addSphere} from './sphere';
+import {addOrbitControls} from "./orbit";
+import {addCamera} from "./camera";
+import {addAmbientLight, addDirectionalLight} from "./light";
+import {addRenderer, addScene, animate} from "./render";
+import {initButton} from "./button";
+import {addIronies} from "./models.ts";
 
 const enableOrbit = false;
 
@@ -42,6 +42,7 @@ async function init() {
 
 await init();
 await addSphere(getGlobals());
-await addMoney(getGlobals());
+await addIronies(getGlobals());
 await animate(getGlobals());
 await initButton();
+

@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Lottery Death",
+    "ironic": true,
+    "times": [12],
+    "phrase": "An old man turned 98. He won the lottery and died the next day.",
+    "model": "money"
+  },
+  {
+    "name": "Chardonnay Fly",
+    "ironic": false,
+    "times": [23],
+    "phrase": "It's a black fly in your chardonnay."
+  },
+  {
+    "name": "Late Pardon",
+    "ironic": true,
+    "times": [28],
+    "phrase": "It's a death row pardon two minutes too late."
+  },
+  {
+    "name": "Wedding Rain",
+    "ironic": false,
+    "times": [39, 90, 170],
+    "phrase": "It's like rain on your wedding day."
+  },
+  {
+    "name": "Free Ride",
+    "ironic": true,
+    "times": [45, 96, 176],
+    "phrase": "It's a free ride when you've already paid."
+  },
+  {
+    "name": "Good Advice",
+    "ironic": false,
+    "times": [50, 101, 181],
+    "phrase": "It's the good advice that you just didn't take."
+  },
+  {
+    "name": "Plane Crash",
+    "ironic": true,
+    "times": [62],
+    "phrase": "Mr. Play It Safe was afraid to fly.\nHe packed his suitcase and kissed his kids goodbye.\nHe waited his whole damn life to take that flight.\nAnd as the plane crashed down, he thought\n\"Well, isn't this nice?\""
+  },
+  {
+    "name": "Traffic Jam",
+    "ironic": false,
+    "times": [136],
+    "phrase": "A traffic jam when you're already late."
+  },
+  {
+    "name": "Smoking Sign",
+    "ironic": false,
+    "times": [142],
+    "phrase": "A no-smoking sign on your cigarette break."
+  },
+  {
+    "name": "10,000 Spoons",
+    "ironic": true,
+    "times": [147],
+    "phrase": "It's like ten thousand spoons when all you need is a knife."
+  },
+  {
+    "name": "Dream Man",
+    "ironic": false,
+    "times": [153],
+    "phrase": "It's meeting the man of my dreams. And then meeting his beautiful wife."
+  }
+]
