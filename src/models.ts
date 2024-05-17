@@ -5,6 +5,7 @@ import {addObject} from "./loader";
 type IronyInSpace = {
   model: Group;
   times: number[];
+  click: () => void;
 };
 
 const insertedIronies: IronyInSpace[] = [];
@@ -30,5 +31,9 @@ async function addIrony({scene, irony}: {scene: Scene, irony: Irony}) {
   insertedIronies.push({
     model,
     times: irony.times,
+    click: () => {
+      //TODO: Show irony info.
+      alert(`${irony.name} is ${irony.ironic ? '' : 'not '}ironic!`);
+    },
   });
 }
