@@ -1,4 +1,4 @@
-import ironies from "./ironies.json";
+import ironies from "./data/ironies.json";
 
 export type Irony = {
   name: string;

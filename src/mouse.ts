@@ -41,6 +41,12 @@ function ancestorMatches(potential: Object3D | null, model: Object3D) {
 function onPointerMove( event: any ) {
   pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
   pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+  const rotateFactor = 30;
+  const rotateX = pointer.y * rotateFactor;
+  document.documentElement.style.setProperty('--rotate-x', `${rotateX}deg`);
+  const rotateY = pointer.x * rotateFactor;
+  document.documentElement.style.setProperty('--rotate-y', `${rotateY}deg`);
 }
 
 export async function initIntersections({camera, scene, renderer}: {camera: Camera, scene: Scene, renderer: WebGLRenderer}) {

@@ -32,8 +32,20 @@ async function addIrony({scene, irony}: {scene: Scene, irony: Irony}) {
     model,
     times: irony.times,
     click: () => {
-      //TODO: Show irony info.
-      alert(`${irony.name} is ${irony.ironic ? '' : 'not '}ironic!`);
+      const el = document.querySelector<HTMLElement>(`[data-js-irony="${irony.model}"]`);
+      if (!el) {
+        return;
+      }
+
+      // Hide existing dialogs.
+      const allEls = Array.from(document.querySelectorAll<HTMLElement>(`[data-js-irony]`));
+      allEls.forEach(x => {
+        x.style.setProperty('--irony-display', 'none');
+      });
+
+      // Show selected dialog.
+      el.style.setProperty('--irony-display', 'block');
+
     },
   });
 }
