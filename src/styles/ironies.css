@@ -28,6 +28,6 @@
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.1s;
     max-height: 90vh;
-    overflow: auto;
+    overflow: scroll;
     display: var(--irony-display);
 }
