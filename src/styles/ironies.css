@@ -12,9 +12,11 @@
     bottom: 0;
     width: 50vw;
     max-width: 600px;
+    pointer-events: none;
 }
 
 .irony {
+    pointer-events: initial;
     position: absolute;
     transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) rotateZ(var(--rotate-z)) translateY(-50%);
     top: 50%;
@@ -28,6 +30,6 @@
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.1s;
     max-height: 90vh;
-    overflow: scroll;
+    overflow: auto;
     display: var(--irony-display);
 }

@@ -4,7 +4,11 @@ import {getInsertedIronies} from "./models";
 const raycaster = new Raycaster(),
   pointer = new Vector2(-1, 1);
 
-async function onMouseClick({camera, scene}: {camera: Camera, scene: Scene}) {
+async function onMouseClick({event, camera, scene}: {event: MouseEvent, camera: Camera, scene: Scene}) {
+  if (event.clientX > 0 || event.clientY > 0) {
+    setMousePos({x: event.clientX, y: event.clientY});
+  }
+
   raycaster.setFromCamera(pointer, camera);
 
   const intersect = raycaster
@@ -38,19 +42,25 @@ function ancestorMatches(potential: Object3D | null, model: Object3D) {
   return ancestorMatches(potential.parent, model);
 }
 
-function onPointerMove( event: any ) {
-  pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+function setMousePos({x, y}: {x: number, y: number}) {
+  pointer.x = ( x / window.innerWidth ) * 2 - 1;
+  pointer.y = - ( y / window.innerHeight ) * 2 + 1;
 
-  const rotateFactor = 30;
-  const rotateX = pointer.y * rotateFactor;
+  const rotateFactor = 20;
+  const rotateX = pointer.y * rotateFactor * 2;
   document.documentElement.style.setProperty('--rotate-x', `${rotateX}deg`);
-  const rotateY = pointer.x * rotateFactor;
+  const rotateY = (pointer.x - 1) * rotateFactor;
   document.documentElement.style.setProperty('--rotate-y', `${rotateY}deg`);
 }
 
-export async function initIntersections({camera, scene, renderer}: {camera: Camera, scene: Scene, renderer: WebGLRenderer}) {
-  renderer.domElement.addEventListener('click', async () => await onMouseClick({camera, scene}));
+function onPointerMove( event: any ) {
+  setMousePos({ x: event.clientX, y: event.clientY });
 }
 
-window.addEventListener( 'pointermove', onPointerMove );
+export async function initIntersections({camera, scene, renderer}: {camera: Camera, scene: Scene, renderer: WebGLRenderer}) {
+  renderer.domElement.addEventListener('click', async (e) => {
+    await onMouseClick({event: e, camera, scene});
+  });
+}
+
+window.addEventListener( 'pointermove', onPointerMove);
