@@ -24,7 +24,8 @@
     "name": "Wedding Rain",
     "ironic": false,
     "times": [39, 90, 170],
-    "phrase": "It's like rain on your wedding day."
+    "phrase": "It's like rain on your wedding day.",
+    "model": "ring"
   },
   {
     "name": "Free Ride",
