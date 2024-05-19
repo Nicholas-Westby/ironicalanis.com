@@ -37,7 +37,8 @@
     "name": "Good Advice",
     "ironic": false,
     "times": [50, 101, 181],
-    "phrase": "It's the good advice that you just didn't take."
+    "phrase": "It's the good advice that you just didn't take.",
+    "model": "advice"
   },
   {
     "name": "Plane Crash",
