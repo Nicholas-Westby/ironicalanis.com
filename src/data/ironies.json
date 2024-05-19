@@ -31,7 +31,8 @@
     "name": "Free Ride",
     "ironic": true,
     "times": [45, 96, 176],
-    "phrase": "It's a free ride when you've already paid."
+    "phrase": "It's a free ride when you've already paid.",
+    "model": "coin"
   },
   {
     "name": "Good Advice",
