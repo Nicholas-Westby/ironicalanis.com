@@ -57,7 +57,8 @@
     "name": "Smoking Sign",
     "ironic": false,
     "times": [142],
-    "phrase": "A no-smoking sign on your cigarette break."
+    "phrase": "A no-smoking sign on your cigarette break.",
+    "model": "no"
   },
   {
     "name": "10,000 Spoons",
