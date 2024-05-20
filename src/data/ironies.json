@@ -73,6 +73,7 @@
     "name": "Dream Man",
     "ironic": false,
     "times": [153],
-    "phrase": "It's meeting the man of my dreams. And then meeting his beautiful wife."
+    "phrase": "It's meeting the man of my dreams. And then meeting his beautiful wife.",
+    "model": "dreams"
   }
 ]
