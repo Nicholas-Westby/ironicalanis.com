@@ -45,7 +45,8 @@
     "name": "Plane Crash",
     "ironic": true,
     "times": [62],
-    "phrase": "Mr. Play It Safe was afraid to fly.\nHe packed his suitcase and kissed his kids goodbye.\nHe waited his whole damn life to take that flight.\nAnd as the plane crashed down, he thought\n\"Well, isn't this nice?\""
+    "phrase": "Mr. Play It Safe was afraid to fly.\nHe packed his suitcase and kissed his kids goodbye.\nHe waited his whole damn life to take that flight.\nAnd as the plane crashed down, he thought\n\"Well, isn't this nice?\"",
+    "model": "plane"
   },
   {
     "name": "Traffic Jam",
