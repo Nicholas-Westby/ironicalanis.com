@@ -1,6 +1,5 @@
 import {Camera, Scene, WebGLRenderer} from "three";
 import {getAspect} from "./window";
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
 import {animateIronies} from "./irony-animation";
 
 export function addRenderer({camera}: {camera: Camera}) {
@@ -17,13 +16,12 @@ export function addRenderer({camera}: {camera: Camera}) {
   return renderer;
 }
 
-export async function animate({orbit, renderer, scene, camera}:
-                         {orbit: OrbitControls, renderer: WebGLRenderer, scene: Scene, camera: Camera}) {
+export async function animate({renderer, scene, camera}:
+                         {renderer: WebGLRenderer, scene: Scene, camera: Camera}) {
   requestAnimationFrame(() => {
-    animate({orbit, renderer, scene, camera});
+    animate({renderer, scene, camera});
   });
   await animateIronies();
-  orbit?.update();
   renderer.render(scene, camera);
 }
 
