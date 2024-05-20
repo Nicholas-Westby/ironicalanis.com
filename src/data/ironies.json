@@ -51,8 +51,9 @@
   {
     "name": "Traffic Jam",
     "ironic": false,
-    "times": [136],
-    "phrase": "A traffic jam when you're already late."
+    "times": [135],
+    "phrase": "A traffic jam when you're already late.",
+    "model": "car"
   },
   {
     "name": "Smoking Sign",
