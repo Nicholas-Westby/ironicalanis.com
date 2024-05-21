@@ -4,6 +4,8 @@ varying vec2 uvf;
 
 uniform float time;
 
+uniform vec2 mouseUv;
+
 mat2 Rot(float a) {
     float s = sin(a), c = cos(a);
     return mat2(c, -s, s, c);
@@ -66,6 +68,22 @@ vec3 desaturate(vec3 color) {
         desaturate(color.b, avg, 3.));
 }
 
+
+vec3 mouseMod(vec3 col, float t) {
+    //float xDistort = (sin(t * 300.) + 1.) * 3.0 + 3.0;
+    //float yDistort = (sin(t * 700. + 2.0) + 1.) * 6.0 + 3.0;
+    //vec2 distort = vec2(yDistort, xDistort);
+    vec2 distort = vec2(2., 1.);
+    float dist = max(0., 1.0 - distance(uvf * distort, mouseUv * distort) * 15.0) * 12.0 + 1.;
+    col.r *= dist;
+    col.g *= dist;
+    col.b *= dist;
+    /*col.r = dist;
+    col.g = dist;
+    col.b = dist;*/
+    return col;
+}
+
 void main()
 {
     vec2 uv = uvf * 10.;
@@ -82,5 +100,5 @@ void main()
         col += StarLayer(uv*scale+i*453.2) * fade;
     }
 
-    gl_FragColor = vec4(desaturate(col) * .3, 1.);
+    gl_FragColor = vec4(mouseMod(desaturate(col) * .3, t), 1.);
 }

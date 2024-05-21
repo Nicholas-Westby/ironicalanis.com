@@ -1,7 +1,13 @@
-import {Mesh, MeshStandardMaterial, PlaneGeometry, Scene} from "three";
+import {Mesh, MeshStandardMaterial, PlaneGeometry, Scene, Vector2} from "three";
 import {loadShaderFile} from "./shaders";
 
-const timeMaterials: any[] = [];
+const timeMaterials: MeshStandardMaterial[] = [];
+
+let mesh: Mesh;
+
+export function getMesh(): Mesh {
+  return mesh;
+}
 
 export function updateTime() {
   timeMaterials.forEach((material: any) => {
@@ -15,19 +21,20 @@ export function updateTime() {
 export async function addStars({scene}: {scene: Scene}) {
   const vertShader = await loadShaderFile('/assets/shaders/stars/stars.vert');
   const fragShader = await loadShaderFile('/assets/shaders/stars/stars.frag');
-  const materialParams = {
-  };
+  const materialParams = {};
 
   (materialParams as any).onBeforeCompile = (shader: any) => {
     shader.uniforms.time = { value: 0 };
+    shader.uniforms.mouseUv = { value: new Vector2(0, 0) };
     shader.vertexShader = vertShader;
     shader.fragmentShader = fragShader;
     material.userData.shader = shader;
   };
 
   const geometry = new PlaneGeometry(),
-    material = new MeshStandardMaterial(materialParams),
-    mesh = new Mesh(geometry, material);
+    material = new MeshStandardMaterial(materialParams);
+
+  mesh = new Mesh(geometry, material);
 
   timeMaterials.push(material);
 

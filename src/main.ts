@@ -11,6 +11,7 @@ import {initButton} from "./button";
 import {addIronies} from "./models";
 import {initIntersections} from "./mouse.ts";
 import {addStars} from "./stars.ts";
+import {initStarsMouse} from "./stars-mouse.ts";
 
 let scene: Scene,
   camera: Camera,
@@ -39,3 +40,4 @@ await addIronies(getGlobals());
 await animate(getGlobals());
 await initButton();
 await initIntersections(getGlobals());
+await initStarsMouse(getGlobals());
