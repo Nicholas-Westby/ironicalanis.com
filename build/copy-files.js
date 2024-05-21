@@ -2,7 +2,6 @@ import { existsSync } from 'node:fs';
 import { copyFile, mkdir, readdir, stat } from 'node:fs/promises';
 import { join as pathJoin, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { rm } from 'node:fs/promises';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -34,6 +33,7 @@ async function main() {
     const pathsToCopy = [
         'assets/images',
         'assets/models',
+        'assets/shaders',
     ];
 
     for (const p of pathsToCopy) {
