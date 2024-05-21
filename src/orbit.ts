@@ -1,9 +1,11 @@
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import {addOrbitControls as internalAddOrbitControls, updateOrbitControls as internalUpdateOrbitControls} from './orbit-fake';
+//import {addOrbitControls as internalAddOrbitControls, updateOrbitControls as internalUpdateOrbitControls} from './orbit-real';
 import {Camera, WebGLRenderer} from "three";
-import {getTarget} from "./camera.ts";
 
-export function addOrbitControls({camera, renderer}: {camera: Camera, renderer: WebGLRenderer}): OrbitControls {
-  const orbit = new OrbitControls(camera, renderer.domElement);
-  orbit.target = getTarget();
-  return orbit;
+export function addOrbitControls({camera, renderer}: {camera: Camera, renderer: WebGLRenderer}) {
+  internalAddOrbitControls({camera, renderer});
+}
+
+export function updateOrbitControls() {
+  internalUpdateOrbitControls();
 }
