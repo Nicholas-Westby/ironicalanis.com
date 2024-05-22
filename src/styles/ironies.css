@@ -32,4 +32,52 @@
     max-height: 90vh;
     overflow: auto;
     display: var(--irony-display);
+
+    h1 {
+        font-size: 26px;
+    }
+}
+
+.irony--ironic,
+.irony--not-ironic {
+    h1 {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &:before {
+            display: inline-block;
+            content: '';
+            width: 100px;
+            aspect-ratio: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+        &:after {
+            display: inline;
+            margin-left: .75ch;
+        }
+    }
+}
+
+.irony--ironic {
+    h1 {
+        &:before {
+            background-image: url("/assets/images/symbols/ironic.webp");
+        }
+        &:after {
+            content: ' (Ironic)';
+        }
+    }
+}
+
+.irony--not-ironic {
+    h1 {
+        &:before {
+            background-image: url("/assets/images/symbols/unironic.webp");
+        }
+        &:after {
+            content: ' (Not Ironic)';
+        }
+    }
 }
