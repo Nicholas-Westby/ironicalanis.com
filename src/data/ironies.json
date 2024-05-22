@@ -1,5 +1,12 @@
 [
   {
+    "name": "Click Me!",
+    "ironic": false,
+    "times": [4],
+    "phrase": "",
+    "model": "click-me"
+  },
+  {
     "name": "Lottery Death",
     "ironic": true,
     "times": [12],
