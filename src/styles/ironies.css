@@ -28,13 +28,20 @@
     backdrop-filter: blur(3vmin);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.1s;
-    min-height: 40vh;
+    min-height: 50vh;
     max-height: 90vh;
     overflow: auto;
     display: var(--irony-display);
 
     h1 {
         font-size: 26px;
+    }
+
+    blockquote {
+        background: #fff;
+        margin: 0 0 40px 0;
+        padding: 20px 10px 20px 5ch;
+        border-radius: 10px;
     }
 }
 
