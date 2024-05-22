@@ -10,13 +10,6 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-
-  &.unmuted {
-    button {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
 }
 
 video {
@@ -30,48 +23,4 @@ video {
 canvas {
   width: 100vw;
   height: 100vh;
-}
-
-button {
-  position: absolute;
-  left: 1vmin;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 10vmin;
-  font-weight: bold;
-  padding: 2vmin;
-  border-radius: 0;
-  border-width: 0;
-  background: #fffa;
-  color: #000;
-  opacity: 1;
-  cursor: pointer;
-  box-shadow: 1vmin 1vmin 0.5vmin 0 #0008;
-  user-select: none;
-  transition:
-          0.25s box-shadow,
-          0.25s background,
-          0.25s color,
-          1s opacity;
-
-  &:hover, &:focus {
-    box-shadow: 2vmin 2vmin 2vmin 0 #0008;
-    background: #000a;
-    color: #fff;
-  }
-}
-
-.stopwatch {
-  position: absolute;
-  background: white;
-  width: 100px;
-  aspect-ratio: 2 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stopwatch-text {
-  font-size: 20px;
-  font-weight: bold;
 }

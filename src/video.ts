@@ -21,5 +21,4 @@ function getVideo(): HTMLVideoElement {
 export async function unmuteVideo() {
   const video = getVideo();
   video.muted = false;
-  document.body.classList.add('unmuted');
 }

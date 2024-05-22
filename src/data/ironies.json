@@ -2,7 +2,7 @@
   {
     "name": "Click Me!",
     "ironic": false,
-    "times": [4],
+    "times": [1],
     "phrase": "",
     "model": "click-me"
   },
