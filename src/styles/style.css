@@ -1,4 +1,5 @@
 @import url("ironies.css");
+@import url("author.css");
 
 *, *:before, *:after {
   box-sizing: border-box;

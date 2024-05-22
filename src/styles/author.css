@@ -1,0 +1,17 @@
+.author {
+    position: absolute;
+    right: 1vw;
+    top: 1vh;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+
+.author-link {
+    color: #08f;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
