@@ -40,11 +40,11 @@ async function addIrony({scene, irony}: {scene: Scene, irony: Irony}) {
       // Hide existing dialogs.
       const allEls = Array.from(document.querySelectorAll<HTMLElement>(`[data-js-irony]`));
       allEls.forEach(x => {
-        x.style.setProperty('--irony-display', 'none');
+        x.style.setProperty('--irony-position', '60vw');
       });
 
       // Show selected dialog.
-      el.style.setProperty('--irony-display', 'block');
+      el.style.setProperty('--irony-position', '0');
 
     },
   });
