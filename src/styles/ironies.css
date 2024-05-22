@@ -18,7 +18,7 @@
 .irony {
     pointer-events: initial;
     position: absolute;
-    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) rotateZ(var(--rotate-z)) translateY(-50%);
+    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateY(-50%);
     top: 50%;
     right: 0;
     width: 100%;
@@ -55,12 +55,14 @@
         &:before {
             display: inline-block;
             content: '';
-            width: 100px;
+            width: 10vw;
+            max-width: 100px;
             aspect-ratio: 1;
             background-size: contain;
             background-repeat: no-repeat;
             margin-right: 10px;
             grid-row: 1 / 3;
+            align-self: center;
         }
         &:after {
             display: block;
@@ -89,5 +91,22 @@
         &:after {
             content: ' (Not Ironic)';
         }
+    }
+}
+
+@media (max-width: 700px) {
+    .ironies {
+        left: 2vw;
+        right: 2vw;
+        width: initial;
+        max-width: initial;
+        top: 50%;
+        bottom: 5vw;
+    }
+
+    .irony {
+        min-height: initial;
+        max-height: 100%;
+        transform: rotateX(calc(var(--rotate-x) / 2)) rotateY(calc(var(--rotate-y) / 2)) translateY(-50%);
     }
 }
