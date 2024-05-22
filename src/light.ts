@@ -4,7 +4,6 @@ function addDirectionalLight({scene}: {scene: Scene}) {
   const directionalLight = new DirectionalLight(0xffffff);
   directionalLight.position.set(20, 10, 30).normalize();
   directionalLight.intensity = 3;
-  directionalLight.castShadow = true;
   scene.add(directionalLight);
 }
 

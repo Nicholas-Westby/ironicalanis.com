@@ -10,7 +10,7 @@
     right: 2vw;
     top: 0;
     bottom: 0;
-    width: 50vw;
+    width: 40vw;
     max-width: 600px;
     pointer-events: none;
 }
@@ -22,13 +22,13 @@
     top: 50%;
     right: 0;
     width: 100%;
-    aspect-ratio: 4 / 3;
     background: #fff8;
     padding: 2vmin;
     border-radius: 3vmin;
     backdrop-filter: blur(3vmin);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.1s;
+    min-height: 40vh;
     max-height: 90vh;
     overflow: auto;
     display: var(--irony-display);
