@@ -1,5 +1,8 @@
 import {MeshBasicMaterial, Vector2, VideoTexture} from "three";
 
+/**
+ * Loads the video into a material.
+ */
 export async function loadVideoMaterial() {
   const video = getVideo();
   video.muted = true;
@@ -10,14 +13,23 @@ export async function loadVideoMaterial() {
   return new MeshBasicMaterial({ map: videoTexture });
 }
 
+/**
+ * Plays the video.
+ */
 export async function playVideo() {
   await getVideo().play();
 }
 
+/**
+ * Returns the video element.
+ */
 function getVideo(): HTMLVideoElement {
   return document.querySelector('video') || document.createElement('video');
 }
 
+/**
+ * Unmutes the video's audio (it is muted by default due to browser restrictions).
+ */
 export async function unmuteVideo() {
   const video = getVideo();
   video.muted = false;

@@ -5,10 +5,16 @@ const timeMaterials: MeshStandardMaterial[] = [];
 
 let mesh: Mesh;
 
+/**
+ * Returns the star mesh.
+ */
 export function getMesh(): Mesh {
   return mesh;
 }
 
+/**
+ * Updates the time that is used to animate the star field.
+ */
 export function updateTime() {
   timeMaterials.forEach((material: any) => {
     const shader = material.userData.shader;
@@ -18,6 +24,11 @@ export function updateTime() {
   });
 }
 
+/**
+ * Adds the star field mesh to the scene.
+ *
+ * @param scene The scene to add the star field to.
+ */
 export async function addStars({scene}: {scene: Scene}) {
   const vertShader = await loadShaderFile('/assets/shaders/stars/stars.vert');
   const fragShader = await loadShaderFile('/assets/shaders/stars/stars.frag');

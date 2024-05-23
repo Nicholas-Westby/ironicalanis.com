@@ -6,7 +6,7 @@ import {addSphere} from './sphere';
 import {addOrbitControls} from "./orbit";
 import {createCamera} from "./camera";
 import {addLights} from "./light";
-import {addRenderer, addScene, animate} from "./render";
+import {addRenderer, createScene, animate} from "./render";
 import {addIronies} from "./models";
 import {initIntersections} from "./mouse.ts";
 import {addStars} from "./stars.ts";
@@ -30,7 +30,7 @@ const getGlobals = () => ({
  * Initialize the app.
  */
 async function init() {
-  scene = addScene();
+  scene = createScene();
   camera = createCamera();
   renderer = addRenderer(getGlobals());
   const globals = getGlobals();
