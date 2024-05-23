@@ -31,13 +31,13 @@ async function init() {
   renderer = addRenderer(getGlobals());
   addLights(getGlobals());
   addOrbitControls(getGlobals());
+  await addStars(getGlobals());
+  await addSphere(getGlobals());
+  await addIronies(getGlobals());
+  await animate(getGlobals());
+  await initButton();
+  await initIntersections(getGlobals());
+  await initStarsMouse(getGlobals());
 }
 
 await init();
-await addStars(getGlobals());
-await addSphere(getGlobals());
-await addIronies(getGlobals());
-await animate(getGlobals());
-await initButton();
-await initIntersections(getGlobals());
-await initStarsMouse(getGlobals());
