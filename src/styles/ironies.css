@@ -2,7 +2,9 @@
     --rotate-x: 0deg;
     --rotate-y: 0deg;
     --rotate-z: 0deg;
-    --irony-position: 60vw;
+    --irony-position-initial: -60vw;
+    --irony-position-visible: 0;
+    --irony-position: var(--irony-position-initial);
 }
 
 .ironies {
@@ -18,16 +20,16 @@
 .irony {
     pointer-events: initial;
     position: absolute;
-    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateY(-50%) translateX(var(--irony-position));
+    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateY(-50%);
     top: 50%;
-    right: 0;
+    right: var(--irony-position);
     width: 100%;
     background: #fff8;
     padding: 2vmin;
     border-radius: 3vmin;
     backdrop-filter: blur(3vmin);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.25s;
+    transition: right 0.5s;
     min-height: 50vh;
     max-height: 70vh;
     overflow: auto;
@@ -104,8 +106,9 @@
     }
 
     .irony {
+        --irony-position-initial: -110vw;
         min-height: initial;
         max-height: 100%;
-        transform: rotateX(calc(var(--rotate-x) / 2)) rotateY(calc(var(--rotate-y) / 2)) translateY(-50%) translateX(var(--irony-position));
+        transform: rotateX(calc(var(--rotate-x) / 2)) rotateY(calc(var(--rotate-y) / 2)) translateY(-50%);
     }
 }
