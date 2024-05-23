@@ -107,6 +107,7 @@
 
     .irony {
         --irony-position-initial: -110vw;
+        --irony-position: var(--irony-position-initial);
         min-height: initial;
         max-height: 100%;
         transform: rotateX(calc(var(--rotate-x) / 2)) rotateY(calc(var(--rotate-y) / 2)) translateY(-50%);
