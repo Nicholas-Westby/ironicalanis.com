@@ -1,6 +1,6 @@
 import {Group, Scene} from 'three';
 import {getIronies, Irony} from "./ironies";
-import {addObject} from "./loader";
+import {addIronyObject} from "./loader";
 
 type IronyInSpace = {
   model: Group;
@@ -27,7 +27,7 @@ async function addIrony({scene, irony}: {scene: Scene, irony: Irony}) {
   if (!irony.model) {
     return;
   }
-  const model = await addObject({scene, name: irony.model});
+  const model = await addIronyObject({scene, name: irony.model});
   insertedIronies.push({
     model,
     times: irony.times,
