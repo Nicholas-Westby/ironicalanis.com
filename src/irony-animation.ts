@@ -2,9 +2,23 @@ import {getInsertedIronies} from "./models";
 
 const videoEl = document.querySelector('video');
 
+let lastVideoTime: number,
+  lastPerfTime: number;
+
+function getSeconds() {
+  const seconds = videoEl!.currentTime,
+    now = performance.now();
+  if (seconds !== lastVideoTime) {
+    lastVideoTime = seconds;
+    lastPerfTime = now;
+  }
+  const diff = now - lastPerfTime;
+  return seconds + diff / 1000.0;
+}
+
 export async function animateIronies() {
   const ironies = await getInsertedIronies(),
-    seconds = videoEl!.currentTime,
+    seconds = getSeconds(),
     start = -2,
     end = 10;
   for (const irony of ironies) {
