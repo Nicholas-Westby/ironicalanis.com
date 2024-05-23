@@ -29,15 +29,16 @@ async function init() {
   scene = addScene();
   camera = addCamera();
   renderer = addRenderer(getGlobals());
-  addLights(getGlobals());
-  addOrbitControls(getGlobals());
-  await addStars(getGlobals());
-  await addSphere(getGlobals());
-  await addIronies(getGlobals());
-  await animate(getGlobals());
+  const globals = getGlobals();
+  addLights(globals);
+  addOrbitControls(globals);
+  await addStars(globals);
+  await addSphere(globals);
+  await addIronies(globals);
+  await animate(globals);
   await initButton();
-  await initIntersections(getGlobals());
-  await initStarsMouse(getGlobals());
+  await initIntersections(globals);
+  await initStarsMouse(globals);
 }
 
 await init();
