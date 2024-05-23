@@ -1,5 +1,8 @@
 import {Object3D} from "three";
 
+/**
+ * Ensures all materials in the specified model support transparency.
+ */
 export async function transparentMaterial({model}: {model: Object3D}): Promise<Object3D> {
   model.traverse((x: Object3D) => {
     if (!(x as any).isMesh) {
