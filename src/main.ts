@@ -4,7 +4,7 @@ import {
 } from 'three';
 import {addSphere} from './sphere';
 import {addOrbitControls} from "./orbit";
-import {addCamera} from "./camera";
+import {createCamera} from "./camera";
 import {addLights} from "./light";
 import {addRenderer, addScene, animate} from "./render";
 import {addIronies} from "./models";
@@ -31,7 +31,7 @@ const getGlobals = () => ({
  */
 async function init() {
   scene = addScene();
-  camera = addCamera();
+  camera = createCamera();
   renderer = addRenderer(getGlobals());
   const globals = getGlobals();
   addLights(globals);
