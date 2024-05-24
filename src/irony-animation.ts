@@ -44,7 +44,7 @@ export async function animateIronies() {
     } else {
 
       // Keep the irony out of view (behind the sphere).
-      irony.model.rotation.x = -2;
+      irony.model.rotation.x = -3;
 
     }
   }

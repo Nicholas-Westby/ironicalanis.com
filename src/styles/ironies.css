@@ -15,11 +15,13 @@
     width: 40vw;
     max-width: 600px;
     pointer-events: none;
+    z-index: 100;
 }
 
 .irony {
     pointer-events: initial;
     position: absolute;
+    transform-style: flat;
     transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateY(-50%);
     top: 50%;
     right: var(--irony-position);
