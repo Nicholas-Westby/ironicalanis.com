@@ -67,5 +67,5 @@ export async function addStars({scene}: {scene: Scene}) {
  * It would be better to test for a slow device, but for now a small screen will suffice.
  */
 function isSmallScreen() {
-  return (window.innerWidth + window.innerHeight) / 2 < 800;//TODO: ...
+  return (window.innerWidth + window.innerHeight) / 2 < 500;
 }
