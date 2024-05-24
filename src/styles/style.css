@@ -1,12 +1,11 @@
-@import url("ironies.css");
 @import url("author.css");
+@import url("ironies.css");
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
-  background: #000;
   position: absolute;
   left: 0;
   right: 0;

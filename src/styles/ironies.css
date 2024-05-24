@@ -27,7 +27,8 @@
     background: #fff8;
     padding: 2vmin;
     border-radius: 3vmin;
-    backdrop-filter: blur(3vmin);
+    backdrop-filter: blur(3px);
+    border: 10px solid #fff;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     transition: right 0.5s;
     min-height: 50vh;
@@ -139,5 +140,11 @@
         min-height: initial;
         max-height: 100%;
         transform: rotateX(calc(var(--rotate-x) / 2)) rotateY(calc(var(--rotate-y) / 2)) translateY(-50%);
+    }
+}
+
+@media (max-width: 800px) {
+    .irony {
+        backdrop-filter: initial;
     }
 }
