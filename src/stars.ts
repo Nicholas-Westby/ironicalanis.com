@@ -43,29 +43,14 @@ export async function addStars({scene}: {scene: Scene}) {
   };
 
   const geometry = new PlaneGeometry(),
-    material = new MeshStandardMaterial(materialParams),
-    //TODO: Perhaps use an image of a star field or use a much simpler algorithm.
-    slowMaterial = new MeshBasicMaterial({
-      color: '#000',
-    });
+    material = new MeshStandardMaterial(materialParams);
 
-  if (isSmallScreen()) {
-    mesh = new Mesh(geometry, slowMaterial);
-  } else {
-    mesh = new Mesh(geometry, material);
-    timeMaterials.push(material);
-  }
+  mesh = new Mesh(geometry, material);
+  timeMaterials.push(material);
 
   mesh.scale.set(60, 20, 1);
   mesh.rotation.set(30 * Math.PI / 180, 0, 0);
   mesh.position.set(0, 3, -5);
 
   scene.add(mesh);
-}
-
-/**
- * It would be better to test for a slow device, but for now a small screen will suffice.
- */
-function isSmallScreen() {
-  return (window.innerWidth + window.innerHeight) / 2 < 500;
 }
