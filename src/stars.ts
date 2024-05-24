@@ -1,4 +1,4 @@
-import {Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, Scene, Vector2} from "three";
+import {Mesh, MeshStandardMaterial, PlaneGeometry, Scene, Vector2} from "three";
 import {loadShaderFile} from "./shaders";
 
 const timeMaterials: MeshStandardMaterial[] = [];
