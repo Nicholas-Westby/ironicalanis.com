@@ -1,4 +1,4 @@
-import {MeshBasicMaterial, Vector2, VideoTexture} from "three";
+import {MeshStandardMaterial, Vector2, VideoTexture} from "three";
 
 /**
  * Loads the video into a material.
@@ -10,7 +10,7 @@ export async function loadVideoMaterial() {
   const videoTexture = new VideoTexture(video);
   videoTexture.repeat.set(3.8, 3);
   videoTexture.offset = new Vector2(-.45, -1.4);
-  return new MeshBasicMaterial({ map: videoTexture });
+  return new MeshStandardMaterial({ map: videoTexture });
 }
 
 /**

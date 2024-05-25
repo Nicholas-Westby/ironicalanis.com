@@ -1,13 +1,19 @@
 import {AmbientLight, DirectionalLight, PointLight, Scene} from "three";
+import {isSmallDevice} from "./device";
 
 /**
  * Adds the main directional light to the scene.
  * @param scene The scene to add the light to.
  */
 function addDirectionalLight({scene}: {scene: Scene}) {
-  const directionalLight = new DirectionalLight(0xffffff);
-  directionalLight.position.set(20, 10, 30).normalize();
-  directionalLight.intensity = 3;
+  const directionalLight = new DirectionalLight(0xffffff),
+    shadowSizeFactor = isSmallDevice() ? 4 : 8;
+  directionalLight.position.set(10, 5, 15);
+  directionalLight.intensity = 2;
+  directionalLight.castShadow = true;
+  directionalLight.shadow.mapSize.width = 1024 * shadowSizeFactor;
+  directionalLight.shadow.mapSize.height = 1024 * shadowSizeFactor;
+  directionalLight.shadow.camera.far = 20;
   scene.add(directionalLight);
 }
 

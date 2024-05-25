@@ -1,6 +1,6 @@
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import {Group, Object3DEventMap, Scene} from "three";
-import {transparentMaterial} from "./material.ts";
+import {transparentMaterial, shadowCastMaterial} from "./material.ts";
 
 /**
  * Adds an irony 3D model to the scene.
@@ -14,6 +14,7 @@ export async function addIronyObject({scene, name, scale}: {scene: Scene, name: 
     loader.load(`${name}.gltf`, async (gltf) => {
       const model = gltf.scene;
       await transparentMaterial({model});
+      await shadowCastMaterial({model});
 
       const factor = scale || 0.1;
       model.scale.set(factor, factor, factor);

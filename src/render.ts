@@ -1,4 +1,4 @@
-import {Camera, Scene, WebGLRenderer} from "three";
+import {Camera, PCFSoftShadowMap, Scene, WebGLRenderer} from "three";
 import {getAspect} from "./window";
 import {animateIronies} from "./irony-animation";
 import {updateTime} from "./stars.ts";
@@ -13,6 +13,8 @@ export function addRenderer({camera}: {camera: Camera}) {
   const renderer = new WebGLRenderer({
     antialias: true,
   });
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = PCFSoftShadowMap;
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
