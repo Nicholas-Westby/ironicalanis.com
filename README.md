@@ -6,7 +6,7 @@ This repo is the code for the above website.
 
 It projects the "Ironic" Alanis Morissette music video onto a sphere, and has clickable 3D models that move across the sphere in sync with the song lyrics. Clicking them shows details about the corresponding lyrics. There is also a moving star field behind the sphere that brightens near the mouse pointer.
 
-![IronicAlanis.com Video Capture](/supporting/ironicalanis.mp4?raw=true)
+[IronicAlanis.com Video Capture](https://github.com/Nicholas-Westby/ironicalanis.com/assets/5933222/c030d235-8f40-49fc-af12-d90641ff5fbd)
 
 I have open sourced this so others interested in Three.js can learn from what I've done here.
 
