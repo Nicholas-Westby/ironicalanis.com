@@ -8,7 +8,11 @@ export async function transparentMaterial({model}: {model: Object3D}): Promise<O
     if (!(x as any).isMesh) {
       return;
     }
-    (x as any).material.transparent = true;
+    const material = (x as any).material;
+    material.transparent = true;
+    if (material.name === 'Glass') {
+      material.depthWrite = false;
+    }
   });
   return model;
 }
@@ -21,7 +25,10 @@ export async function shadowCastMaterial({model}: {model: Object3D}): Promise<Ob
     if (!(x as any).isMesh) {
       return;
     }
-    x.castShadow = true;
+    const material = (x as any).material;
+    if (material.name !== 'Glass') {
+      x.castShadow = true;
+    }
   });
   return model;
 }
