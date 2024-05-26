@@ -107,7 +107,7 @@
 .irony--ironic {
     h1 {
         &:before {
-            background-image: url("/assets/images/symbols/ironic.webp");
+            background-image: url("/assets/images/symbols/ironic.svg");
         }
         &:after {
             content: ' (Ironic)';
@@ -118,7 +118,7 @@
 .irony--not-ironic {
     h1 {
         &:before {
-            background-image: url("/assets/images/symbols/unironic.webp");
+            background-image: url("/assets/images/symbols/unironic.svg");
         }
         &:after {
             content: ' (Not Ironic)';
