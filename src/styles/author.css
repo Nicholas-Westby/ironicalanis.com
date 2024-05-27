@@ -2,9 +2,11 @@
     position: absolute;
     right: 1vw;
     top: 1vh;
-    font-weight: bold;
     font-size: 24px;
     color: white;
+
+    font-family: var(--author-font-family);
+    font-style: var(--author-font-style);
 }
 
 .author-link {

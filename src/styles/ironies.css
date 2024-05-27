@@ -13,7 +13,7 @@
     top: 0;
     bottom: 0;
     width: 40vw;
-    max-width: 600px;
+    max-width: 700px;
     pointer-events: none;
     z-index: 100;
 }
@@ -42,7 +42,10 @@
     }
 
     blockquote {
-        font-weight: bold;
+        font-family: var(--lyric-font-family);
+        font-weight: var(--lyric-font-weight);
+        font-style: var(--lyric-font-style);
+        font-size: var(--lyric-font-size);
         margin: 0 0 40px 0;
         padding: 30px 40px 30px 60px;
         border-radius: 10px;
@@ -75,15 +78,39 @@
             transform: rotate(180deg);
         }
     }
+
+    p, h1 {
+        font-family: var(--details-font-family);
+        font-weight: var(--details-font-weight);
+        font-style: var(--details-font-style);
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: var(--details-font-size);
+
+        strong {
+            text-decoration: underline;
+        }
+    }
+}
+
+.sr-only {
+    position: absolute;
+    top: -100vh;
 }
 
 .irony--ironic,
 .irony--not-ironic {
     h1 {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-        align-items: end;
+        position: relative;
+        left: 50%;
+        width: 0;
+        overflow: visible;
+        margin-top: 0;
         &:before {
             display: inline-block;
             content: '';
@@ -93,13 +120,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             margin-right: 10px;
-            grid-row: 1 / 3;
-            align-self: center;
-        }
-        &:after {
-            display: block;
-            grid-column: 2 / 3;
-            align-self: start;
+            transform: translateX(-50%);
         }
     }
 }
@@ -109,9 +130,6 @@
         &:before {
             background-image: url("/assets/images/symbols/ironic.svg");
         }
-        &:after {
-            content: ' (Ironic)';
-        }
     }
 }
 
@@ -119,9 +137,6 @@
     h1 {
         &:before {
             background-image: url("/assets/images/symbols/unironic.svg");
-        }
-        &:after {
-            content: ' (Not Ironic)';
         }
     }
 }

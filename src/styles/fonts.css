@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Marcellus&display=swap');
+
+:root {
+    --lyric-font-family: "Courgette", cursive;
+    --lyric-font-weight: 400;
+    --lyric-font-style: normal;
+    --lyric-font-size: 20px;
+
+    --details-font-family: "Marcellus", serif;
+    --details-font-weight: 400;
+    --details-font-style: normal;
+    --details-font-size: 20px;
+
+    --author-font-family: var(--lyric-font-family);
+    --author-font-style: var(--lyric-font-style);
+}
