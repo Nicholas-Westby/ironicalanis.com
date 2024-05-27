@@ -37,10 +37,6 @@
     max-height: 70vh;
     overflow: auto;
 
-    h1 {
-        font-size: 26px;
-    }
-
     blockquote {
         font-family: var(--lyric-font-family);
         font-weight: var(--lyric-font-weight);
@@ -111,10 +107,13 @@
         width: 0;
         overflow: visible;
         margin-top: 0;
+        margin-bottom: 10px;
+
         &:before {
             display: inline-block;
             content: '';
             width: 10vw;
+            min-width: 60px;
             max-width: 100px;
             aspect-ratio: 1;
             background-size: contain;
