@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi</title>
+    <style>
+        body {
+            background: #0088ff;
+        }
+        canvas {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="800"></canvas>
+
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        #version 300 es
+
+        in vec2 position;
+
+        void main() {
+            gl_Position = vec4(position, 0, 1);
+        }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        #version 300 es
+
+        precision highp float;
+
+        out vec4 outColor;
+
+        uniform vec2 xRange;
+        uniform vec2 yRange;
+        uniform float time;
+
+        void main() {
+            //gl_FragColor = vec4(gl_FragCoord.x / 800.0, gl_FragCoord.y / 800.0, 0, 1.);
+            float x = (gl_FragCoord.x - xRange.x) / (xRange.y - xRange.x);
+            float y = (gl_FragCoord.y - yRange.x) / (yRange.y - yRange.x);
+            float z = sin(x * y * time * time);
+            outColor = vec4(x, y, 0., z);
+        }
+    </script>
+
+    <script type="module">
+        (()=> {
+            const canvas = document.querySelector('canvas'),
+                gl = canvas.getContext('webgl2', {premultipliedAlpha: false});
+
+            let shaderProgram;
+
+            function supplyUniforms(program) {
+                const xRange = gl.getUniformLocation(program, 'xRange');
+                gl.uniform2fv(xRange, [0, 800]);
+
+                const yRange = gl.getUniformLocation(program, 'yRange');
+                gl.uniform2fv(yRange, [0, 800]);
+
+                const time = gl.getUniformLocation(program, 'time');
+                gl.uniform1f(time, performance.now() / 1000);
+            }
+
+            function configureShader() {
+                const vertexShaderText = document.getElementById('vertex-shader').text.trim(),
+                    fragmentShaderText = document.getElementById('fragment-shader').text.trim(),
+                    vertexShader = gl.createShader(gl.VERTEX_SHADER),
+                    fragmentShader = gl.createShader(gl.FRAGMENT_SHADER),
+                    program = gl.createProgram();
+
+                gl.shaderSource(vertexShader, vertexShaderText);
+                gl.compileShader(vertexShader);
+
+                gl.shaderSource(fragmentShader, fragmentShaderText);
+                gl.compileShader(fragmentShader);
+
+                gl.attachShader(program, vertexShader);
+                gl.attachShader(program, fragmentShader);
+                gl.linkProgram(program);
+                gl.useProgram(program);
+
+                return program;
+            }
+
+            function init() {
+                gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+
+                const buffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+                gl.bufferData(gl.ARRAY_BUFFER,
+                    new Float32Array([
+                        -1.0, -1.0,
+                        1.0, -1.0,
+                        -1.0, 1.0,
+                        -1.0, 1.0,
+                        1.0, -1.0,
+                        1.0, 1.0
+                    ]), gl.STATIC_DRAW);
+
+                shaderProgram = configureShader();
+            }
+
+            function draw() {
+                requestAnimationFrame(draw);
+
+                supplyUniforms(shaderProgram);
+
+                const positionLocation = gl.getAttribLocation(shaderProgram, 'position');
+                gl.enableVertexAttribArray(positionLocation);
+                gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+                gl.drawArrays(gl.TRIANGLES, 0, 6);
+            }
+
+            init();
+            draw();
+        })();
+    </script>
+</body>
+</html>
