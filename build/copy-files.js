@@ -34,6 +34,7 @@ async function main() {
         'assets/images',
         'assets/models',
         'assets/shaders',
+        'robots.txt',
     ];
 
     for (const p of pathsToCopy) {
